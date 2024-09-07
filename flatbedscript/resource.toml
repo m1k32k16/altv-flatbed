@@ -1,0 +1,4 @@
+client-main = 'client.js'
+deps = [ 'chat' ]
+main = 'index.mjs'
+type = 'js'

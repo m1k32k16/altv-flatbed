@@ -19,7 +19,7 @@ alt.onServer('flat:flatbed:sendtowedvehicleslist', (list) => {
         list.forEach(tow => {            
             if ( tow.flatbed && tow.flatbed == alt.Player.local.vehicle.scriptID ) {
                     
-                native.attachEntityToEntity(tow.towed, tow.flatbed, 20, -0.5, -13.0, 0.0, 0.0, 0.0, 0.0, false, false, true, false, 20, true)
+                native.attachEntityToEntity(tow.towed, tow.flatbed, 20, -0.5, -13.0, 0.0, 0.0, 0.0, 0.0, false, false, true, false, 20, true, false);
                 native.detachEntity(tow.towed, true, true)
                 alt.emitServer('flat:flatbed:removetow', tow);
                 found = true
@@ -47,7 +47,8 @@ alt.onServer('flat:flatbed:sendvehicleslist', (list) => {
 
             if ( !found && ( dist <= 10.0 && dist >= 8.0 && dist != 0 ) ) {
             
-                native.attachEntityToEntity(veh.scriptID, alt.Player.local.vehicle.scriptID, 20, -0.5, -5.5, 1.0, 0.0, 0.0, 0.0, true, false, true, false, 10, true)                
+                native.attachEntityToEntity(veh.scriptID, alt.Player.local.vehicle.scriptID, 20, -0.5, -5.5, 1.0, 0.0, 0.0, 0.0, true, false, true, false, 10, true, false);
+
                 alt.emitServer('flat:flatbed:addtow', alt.Player.local.vehicle.scriptID, veh.scriptID);
                 found = true
             
